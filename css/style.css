@@ -1,8 +1,7 @@
 /* Reset some default styles */
-body, ul, li, h2, p {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Add box-sizing reset */
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -12,6 +11,12 @@ body {
     color: #c9d1d9; /* Light grey text color */
     margin: 0;
     padding: 0;
+}
+
+body, ul, li, h2, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Add box-sizing reset */
 }
 
 /* Navbar styles */
