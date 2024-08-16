@@ -1,8 +1,7 @@
 /* Reset some default styles */
-body, ul, li, h2, p {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Add box-sizing reset */
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -12,6 +11,12 @@ body {
     color: #c9d1d9; /* Light grey text color */
     margin: 0;
     padding: 0;
+}
+
+body, ul, li, h2, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Add box-sizing reset */
 }
 
 /* Navbar styles */
@@ -120,4 +125,46 @@ nav ul li a .nav-icon-linkedin {
 nav ul li a:hover .nav-icon-github,
 nav ul li a:hover .nav-icon-linkedin {
     transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards horizontally */
+    gap: 20px; /* Space between cards */
+    max-width: 600px; /* Maximum width for the cards container */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%; /* Full width of the container */
+    max-width: 500px; /* Maximum width for each card */
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.role {
+    font-size: 1.2em;
+    margin: 0;
+    color: #333;
+}
+
+.company {
+    font-size: 1em;
+    color: #555;
+}
+
+.date {
+    font-size: 0.9em;
+    color: #777;
 }
