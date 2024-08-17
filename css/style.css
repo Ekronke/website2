@@ -19,6 +19,120 @@ body, ul, li, h2, p {
     box-sizing: border-box; /* Add box-sizing reset */
 }
 
+
+/* Section styles */
+/* Add this CSS for fade-in effect */
+section {
+	height: 100vh;
+    padding: 4rem 2rem;
+    text-align: left;
+    background-color: #0d1117;
+    opacity: 0; /* Start with the section invisible */
+    transform: translateY(20px); /* Slightly move the section down */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+section.fade-in {
+    opacity: 1; /* Fade in the section */
+    transform: translateY(0); /* Move section to original position */
+}
+
+section h2 {
+	text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem; /* Larger font size for section titles */
+    color: #f0f6fc; /* Lighter color for section titles */
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #8b949e; /* Muted grey for paragraph text */
+    max-width: 800px; /* Restrict the width of the paragraph text */
+    margin: 0 auto;
+}
+
+/* Background color for each section */
+#about {
+    background-color: #0d1117; /* Same background for consistency */
+}
+
+#projects {
+    background-color: #0d1117; /* Same background for consistency */
+}
+
+#experience {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.experience-item {
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+    align-items: flex-start; /* Align items at the top */
+}
+
+.year {
+    flex: 0 0 100px; /* Fixed width to ensure consistent space */
+    font-weight: bold;
+    padding-right: 20px;
+    text-align: left;
+    margin-top: 0;
+}
+
+.role-company {
+    flex: 1; /* Allow this section to take up the remaining space */
+    display: flex;
+    flex-direction: column; /* Stack header and paragraph vertically */
+    justify-content: center; /* Center content vertically */
+}
+
+.role-company h3 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4; /* Slightly increased line height for better readability */
+    font-size: 1.1em; /* Slightly larger font size */
+}
+
+.role-company p {
+    margin: 5px 0 0 0;
+    color: #666; /* Slightly darker color for better contrast */
+    font-size: 0.95em; /* Slightly smaller font size for descriptions */
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .experience-item {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: flex-start;
+    }
+
+    .year {
+        margin-bottom: 5px; /* Add some spacing between year and role-company */
+    }
+}
+
+#education {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center; /* Center items vertically */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
 /* Navbar styles */
 nav {
     background-color: #161b22; /* Darker background for navbar */
@@ -54,70 +168,17 @@ nav ul li a:hover {
     color: #58a6ff; /* Blue color on hover */
 }
 
-/* Section styles */
-/* Add this CSS for fade-in effect */
-section {
-	height: 100vh;
-    padding: 4rem 2rem;
-    text-align: center;
-    background-color: #0d1117;
-    opacity: 0; /* Start with the section invisible */
-    transform: translateY(20px); /* Slightly move the section down */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
-}
-
-section.fade-in {
-    opacity: 1; /* Fade in the section */
-    transform: translateY(0); /* Move section to original position */
-}
-
-section h2 {
-    margin-bottom: 1rem;
-    font-size: 2.5rem; /* Larger font size for section titles */
-    color: #f0f6fc; /* Lighter color for section titles */
-}
-
-section p {
-    font-size: 1.2rem;
-    color: #8b949e; /* Muted grey for paragraph text */
-    max-width: 800px; /* Restrict the width of the paragraph text */
-    margin: 0 auto;
-}
-
-/* Background color for each section */
-#about {
-    background-color: #0d1117; /* Same background for consistency */
-}
-
-#projects {
-    background-color: #0d1117; /* Same background for consistency */
-}
-
-#experience {
-    background-color: #0d1117; /* Same background for consistency */
-}
-
-#education {
-    background-color: #0d1117; /* Same background for consistency */
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center; /* Center items vertically */
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-}
-
 /* Icon Styles */
-nav ul li a .nav-icon-github,
-nav ul li a .nav-icon-linkedin {
+nav ul li a .nav-icon-github {
     width: 24px; /* Adjust icon size */
     height: 24px;
+    margin-right: 8px; /* Add space between icon and text */
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a .nav-icon-linkedin {
+    width: 30px; /* Adjust icon size */
+    height: 30px;
     margin-right: 8px; /* Add space between icon and text */
     transition: transform 0.3s ease-in-out;
 }
@@ -125,46 +186,4 @@ nav ul li a .nav-icon-linkedin {
 nav ul li a:hover .nav-icon-github,
 nav ul li a:hover .nav-icon-linkedin {
     transform: scale(1.1); /* Slightly increase size on hover */
-}
-
-.container {
-    display: flex;
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center; /* Center cards horizontally */
-    gap: 20px; /* Space between cards */
-    max-width: 600px; /* Maximum width for the cards container */
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box; /* Include padding in width calculation */
-}
-
-.card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%; /* Full width of the container */
-    max-width: 500px; /* Maximum width for each card */
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.role {
-    font-size: 1.2em;
-    margin: 0;
-    color: #333;
-}
-
-.company {
-    font-size: 1em;
-    color: #555;
-}
-
-.date {
-    font-size: 0.9em;
-    color: #777;
 }
