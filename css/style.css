@@ -169,16 +169,10 @@ nav ul li a:hover {
 }
 
 /* Icon Styles */
-nav ul li a .nav-icon-github {
+nav ul li a .nav-icon-github,
+nav ul li a .nav-icon-linkedin {
     width: 24px; /* Adjust icon size */
     height: 24px;
-    margin-right: 8px; /* Add space between icon and text */
-    transition: transform 0.3s ease-in-out;
-}
-
-nav ul li a .nav-icon-linkedin {
-    width: 30px; /* Adjust icon size */
-    height: 30px;
     margin-right: 8px; /* Add space between icon and text */
     transition: transform 0.3s ease-in-out;
 }
